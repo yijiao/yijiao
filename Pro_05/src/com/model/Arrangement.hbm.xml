@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.model">
+	<class name="Arrangement" table="arrangements">
+		<id name="id" column="id" type="integer">
+			<generator class="identity" />
+		</id>
+		<property name="district" column="district" type="string" length="50" />
+		<property name="year" column="year" type="integer"  />
+		<property name="priNewCity" column="priNewCity" type="integer"  />
+		<property name="priNewDistrict" column="priNewDistrict" type="integer"  />
+		<property name="priNewVillage" column="priNewVillage" type="integer"  />
+		<property name="priMergeCity" column="priMergeCity" type="integer"  />
+		<property name="priMergeDistrict" column="priMergeDistrict" type="integer"  />
+		<property name="priMergeVillage" column="priMergeVillage" type="integer"  />
+		<property name="priRecover" column="priRecover" type="integer"  />
+		<property name="priTotal" column="priTotal" type="integer"  />
+		<property name="priF2f" column="priF2f" type="integer"  />
+		<property name="priF2m" column="priF2m" type="integer"  />
+		<property name="priScale" column="priScale" type="float"  />
+		<property name="priSuperScale" column="priSuperScale" type="float"  />
+		
+		<property name="middleNewCity" column="middleNewCity" type="integer"  />
+		<property name="middleNewDistrict" column="middleNewDistrict" type="integer"  />
+		<property name="middleNewVillage" column="middleNewVillage" type="integer"  />
+		<property name="middleMergeCity" column="middleMergeCity" type="integer"  />
+		<property name="middleMergeDistrict" column="middleMergeDistrict" type="integer"  />
+		<property name="middleMergeVillage" column="middleMergeVillage" type="integer"  />
+		<property name="middleRecover" column="middleRecover" type="integer"  />
+		<property name="middleTotal" column="middleTotal" type="integer"  />
+		<property name="middleF2f" column="middleF2f" type="integer"  />
+		<property name="middleF2m" column="middleF2m" type="integer"  />
+		<property name="middleScale" column="middleScale" type="float"  />
+		<property name="middleSuperScale" column="middleSuperScale" type="float"  />
+		<!-- 映射从Arrangement到User之间多对一关联关系 -->
+		<many-to-one name="user" class="User" column="userid" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.model">
+	<class name="TeacherTeam" table="teacherTeams">
+		<id name="id" column="id" type="integer">
+			<generator class="identity" />
+		</id>
+		<property name="district" column="district" type="string" length="50" />
+		<property name="year" column="year" type="integer"  />
+		<property name="teacherTotal" column="teacherTotal" type="integer" />
+		
+		<property name="supplyAmount" column="supplyAmount" type="integer" />
+		<property name="supplySchool" column="supplySchool" type="integer"  />
+		<property name="supplyScale" column="supplyScale" type="float"  />
+		<property name="supplyMoneyTotal" column="supplyMoneyTotal" type="float"  />
+		<property name="supplyMoneyProvince" column="supplyMoneyProvince" type="float"  />
+		<property name="supplyMoneyDistrict" column="supplyMoneyDistrict" type="float"  />
+		
+		<property name="flowAmount" column="flowAmount" type="integer" />
+		<property name="flowSchool" column="flowSchool" type="integer"  />
+		<property name="flowScale" column="flowScale" type="float"  />
+		<property name="flowMoneyTotal" column="flowMoneyTotal" type="float"  />
+		<property name="flowMoneyProvince" column="flowMoneyProvince" type="float"  />
+		<property name="flowMoneyDistrict" column="flowMoneyDistrict" type="float"  />
+		
+		<property name="trainAmount" column="trainAmount" type="integer" />
+		<property name="trainSchool" column="trainSchool" type="integer"  />
+		<property name="trainScale" column="trainScale" type="float"  />
+		<property name="trainMoneyTotal" column="trainMoneyTotal" type="float"  />
+		<property name="trainMoneyProvince" column="trainMoneyProvince" type="float"  />
+		<property name="trainMoneyDistrict" column="trainMoneyDistrict" type="float"  />
+		
+		
+		<!-- 映射从EducationMoney到User之间多对一关联关系 -->
+		<many-to-one name="user" class="User" column="userid" />
+	</class>
+</hibernate-mapping>
