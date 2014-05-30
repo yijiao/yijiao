@@ -16,8 +16,8 @@ public class testService {
 		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
 		UserService us = (UserService) ac.getBean("userService");
 		User u = new User();
-		u.setName("xingye");
-		u.setManage(true);
+		u.setName("ww");
+//		u.setManage(true);
 		u.setPassword("202CB962AC59075B964B07152D234B70");
 		us.saveEntity(u);
 	}

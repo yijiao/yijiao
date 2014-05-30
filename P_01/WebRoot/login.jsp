@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'login.jsp' starting page</title>
+    <title>Login</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -20,6 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<link href="cs_login.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript">
 	window.onload=function(){
 		    var verifyObj = document.getElementById("Verify");
@@ -31,16 +32,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-			<h2>用户登陆</h2>
+		
+		<table   class="tab">
    		<s:form action="LoginAction_doLogin" namespace="/" method="post">
-			<b>用户名:</b><input type="text" name="name"  value="xingye">
-			密&nbsp;码:<input type="password" name="password"  value="123"/>
+   		<tr>
+   		 <td scope="col" colspan="2" class="name" id="name"><h2>重庆市义务教育均衡发展工作进展管理系统</h2></td></tr>
+   		
+			<tr><td scope="col" colspan="2" id="first">用户名<input type="text" name="name"  value="xingye" id="input1"></td></tr>
+			<tr><td scope="col" colspan="2" id="secd">密&nbsp;&nbsp;码<input type="password" name="password"  value="123" id="input2" "/></td></tr>
 			<br><s:actionerror></s:actionerror><br>
-			<input type="text" name="securityCode"/>
+			<tr><td scope="col" style="width: 218px; " colspan="2" id="third">验证码<input type="text" name="securityCode"/>
 			
-			<img src="SecurityCodeImageAction" id="Verify"   alt="看不清，换一张"/>
+			<img src="SecurityCodeImageAction" id="Verify"   alt="看不清，换一张"/ id="img"></td></tr>
 			<s:fielderror><s:param>checkCode</s:param></s:fielderror>
-			<s:submit type="submit"  value="登录" />
+			<tr><td scope="col" colspan="2"><s:submit type="submit"  value="登录" id="login" /></td></tr>
+			<tr><td scope="col" colspan="2" id="last">&nbsp;</td></tr>
 		</s:form>
+		</table>
+	
+		
+   		 
   </body>
 </html>
